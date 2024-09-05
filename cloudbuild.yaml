@@ -1,11 +1,11 @@
 steps:
   # Installera beroenden med npm
-  - name: 'node:20'
+  - name: 'node:14'
     entrypoint: 'npm'
     args: ['install']
 
-  # Kör tester (valfritt)
-  - name: 'node:20'
+  # (Valfritt) Kör tester om det finns
+  - name: 'node:14'
     entrypoint: 'npm'
     args: ['test']
 
@@ -14,6 +14,7 @@ steps:
     entrypoint: 'gcloud'
     args: ['app', 'deploy', '--quiet']
 
-# Anger vilka avbildningar som kommer att genereras
+# Om du vill bygga en containerbild, kan du lägga till en images-sektion
 images:
   - 'gcr.io/$PROJECT_ID/my-app'
+
