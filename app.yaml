@@ -1,0 +1,5 @@
+runtime: nodejs20  # Eller nodejs16 eller nodejs20 beroende på vilken version du använder
+env: standard
+handlers:
+  - url: /.*
+    script: auto
